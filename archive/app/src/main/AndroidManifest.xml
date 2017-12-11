@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.louis.nursingsystem">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+    <activity
+        android:name=".Login"
+        android:label="Login"
+        android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".BluetoothPage"
+        android:label="Bluetooth" >
+        <intent-filter>
+            <action android:name="BluetoothPage" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+
+
+    <activity
+        android:name=".Temperature"
+        android:label="Temperature" >
+        <intent-filter>
+            <action android:name="Temperature" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".BloodPressure"
+        android:label="BloodPressure" >
+        <intent-filter>
+            <action android:name="BloodPressure" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".Pulse"
+        android:label="Pulse" >
+        <intent-filter>
+            <action android:name="Pulse" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".History"
+        android:label="History" >
+        <intent-filter>
+            <action android:name="History" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+
+    <activity
+        android:name=".Tab1"
+        android:label="Tab1" >
+        <intent-filter>
+            <action android:name="History" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name=".Tab2"
+        android:label="Tab2" >
+        <intent-filter>
+            <action android:name="History" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+    <activity
+
+        android:name=".Tab3"
+        android:label="Tab3" >
+        <intent-filter>
+            <action android:name="History" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
+    </application>
+
+</manifest>

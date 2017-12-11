@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bg2"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:background="#000000">
+
+    <LinearLayout
+        android:id="@+id/GraphTemp2"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="15"
+        />
+
+    <LinearLayout
+        android:id="@+id/LL222"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="85"
+        >
+        <TextView
+            android:id="@+id/tvBluetooth2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Pulse"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="center_horizontal" />
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/textView322"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:textSize="10dp"
+            android:id="@+id/textView522"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Control"
+            android:id="@+id/textView1022"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="0dp"/>
+
+        <ToggleButton
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="New ToggleButton"
+            android:textSize="10dp"
+            android:checked="false"
+            android:textOff="Start Stream"
+            android:textOn="Stop Stream"
+            android:id="@+id/tbStream2" />
+
+        <ToggleButton
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:text="New ToggleButton"
+            android:textSize="10dp"
+            android:checked="true"
+            android:textOff="AutoScroll"
+            android:textOn="AutoScroll"
+            android:id="@+id/tbScroll2" />
+
+        <ToggleButton
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:checked="true"
+            android:text="New ToggleButton"
+            android:textSize="10dp"
+            android:textOff="Lock"
+            android:textOn="Lock"
+            android:id="@+id/tbLock2" />
+
+        <LinearLayout
+            android:id="@+id/zoom2"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bXminus2"
+                android:text="-"
+                android:textSize="12dp"
+                android:layout_weight="50"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/bXplus2"
+                android:text="+"
+                android:textSize="12dp"
+                android:layout_weight="50"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

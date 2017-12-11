@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Nursing System"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#08fe00" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="TEMPERATURE"
+        android:id="@+id/btntemp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="BLOOD PRESSURE"
+        android:id="@+id/btnbp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="PULSE"
+        android:id="@+id/btnpulse"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="HISTORY"
+        android:id="@+id/btnhistory"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        android:layout_marginTop="90dp"
+        android:layout_gravity="bottom|left"
+        android:id="@+id/btnConnect" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"
+        android:id="@+id/btnDisconnect" />
+
+</LinearLayout>

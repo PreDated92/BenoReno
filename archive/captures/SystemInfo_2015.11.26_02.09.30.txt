@@ -1,0 +1,57 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      History:
+        12768cea com.example.louis.nursingsystem/.Tab1
+        22657bdb com.example.louis.nursingsystem/.Tab2
+        3754a678 com.example.louis.nursingsystem/.Tab3
+        39b20cd5 com.example.louis.nursingsystem/.History
+      android.intent.action.MAIN:
+        1293a151 com.example.louis.nursingsystem/.Login
+        39a88db6 com.example.louis.nursingsystem/.MainActivity
+      BloodPressure:
+        38b5fab7 com.example.louis.nursingsystem/.BloodPressure
+      Pulse:
+        3869b224 com.example.louis.nursingsystem/.Pulse
+      BluetoothPage:
+        2520018d com.example.louis.nursingsystem/.BluetoothPage
+      Temperature:
+        f27cf42 com.example.louis.nursingsystem/.Temperature
+
+Key Set Manager:
+  [com.example.louis.nursingsystem]
+      Signing KeySets: 7016
+
+Packages:
+  Package [com.example.louis.nursingsystem] (3a8b9eee):
+    userId=10433 gids=[3002, 3001]
+    pkg=Package{24258b53 com.example.louis.nursingsystem}
+    codePath=/data/app/com.example.louis.nursingsystem-2
+    resourcePath=/data/app/com.example.louis.nursingsystem-2
+    legacyNativeLibraryDir=/data/app/com.example.louis.nursingsystem-2/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    nativeLibraryRootDir=/data/app/com.example.louis.nursingsystem-2/lib
+    nativeLibraryDir=/data/app/com.example.louis.nursingsystem-2/lib/arm64
+    secondaryNativeLibraryDir=null
+    nativeLibraryRootRequiresIsa=true
+    dexMode=full art
+    dexTimeStamp=2015-11-26 02:05:15
+    versionCode=1 targetSdk=23
+    versionName=1.0
+    splits=[base]
+    applicationInfo=ApplicationInfo{29a1cc90 com.example.louis.nursingsystem}
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    dataDir=/data/data/com.example.louis.nursingsystem
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2015-11-26 02:05:13
+    firstInstallTime=2015-11-26 01:31:46
+    lastUpdateTime=2015-11-26 02:05:13
+    signatures=PackageSignatures{357721c [d982989]}
+    permissionsFixed=true haveGids=true installStatus=1
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    User 0:  installed=true hidden=false stopped=false notLaunched=false enabled=0
+    grantedPermissions:
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+mPackagesOnlyForOwnerUser:
+mComponentsOnlyForOwnerUser:
