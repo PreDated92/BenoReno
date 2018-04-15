@@ -12,47 +12,73 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conventional login/fingerprint login/unique ID login"/>
+        android:text="Conventional login (Might not make it into final cut)"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username: "/>
-
-    <EditText
-        style="@style/EditTextStyle"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameText"/>
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password: "/>
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/nameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Username"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        style="@style/EditTextStyle"
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passText"/>
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/passText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Password"/>
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12pt"
         android:text="Login"
-        android:id="@+id/btnlogin"/>
+        android:id="@+id/btConventionalLogin"/>
 
     <TextView
+        android:layout_marginTop="12pt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Unique ID: "/>
+        android:text="Fingerprint login (Default entry method)"/>
 
-    <EditText
-        style="@style/EditTextStyle"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/uniqueIdText"/>
+        android:text="Pass Fingerprint Login"
+        android:id="@+id/btFingerprintPassLogin"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fail Fingerprint Login"
+        android:id="@+id/btFingerprintFailLogin"/>
+
+    <TextView
+        android:layout_marginTop="12pt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unique ID login (Usually used for registering new users, when the database is empty)"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/uniqueIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Unique ID"/>
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"

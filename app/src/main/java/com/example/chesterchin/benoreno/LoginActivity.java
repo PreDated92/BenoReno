@@ -1,6 +1,7 @@
 package com.example.chesterchin.benoreno;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ public class LoginActivity extends Activity {
     //    However~ we could have a conventional login as a backup process? But is the data is stored on the bike safe? (Unless we keep it hashed?)
     // 3. There is a unique ID code given to each Beno bike so we're gonna add that in here.
 
+    Context mContext = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,22 +26,40 @@ public class LoginActivity extends Activity {
 
         final EditText nameText = findViewById(R.id.nameText);
         final EditText passText = findViewById(R.id.passText);
-        final Button btnlogin =  findViewById(R.id.btnlogin);
+        final Button btnConvLogin =  findViewById(R.id.btConventionalLogin);
+        final Button btnFailLogin = findViewById(R.id.btFingerprintFailLogin);
+        final Button btnPassLogin = findViewById(R.id.btFingerprintPassLogin);
         final EditText uniqueIdText = findViewById(R.id.uniqueIdText);
         final Button btnUniqueID = findViewById(R.id.btnUniqueId);
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnConvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean isCredentialsCorrect = nameText.getText().toString().equals("Ken") && passText.getText().toString().equals("123");
                 if(isCredentialsCorrect) {
-                    Toast.makeText(getApplicationContext(), "Login Successful!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Toast.makeText(mContext, "Login Successful!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, MainActivity.class);
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Wrong Credentials", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        btnFailLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Toast.makeText(mContext, "Fingerprint Does Not Match Any Database Fingerprints!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnPassLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Fingerprint Match! Welcome Xxx!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -47,12 +68,12 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 boolean isUniqueIdCorrect = uniqueIdText.getText().toString().equals("123");
                 if(isUniqueIdCorrect) {
-                    Toast.makeText(getApplicationContext(), "Correct Unique ID!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, RegisterUserActivity.class);
+                    Toast.makeText(mContext, "Correct Unique ID!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, RegisterUserActivity.class);
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Incorrect Unique ID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Incorrect Unique ID", Toast.LENGTH_SHORT).show();
                 }
             }
         });
