@@ -49,9 +49,6 @@
             android:screenOrientation="landscape" />
         <activity android:name=".RegisterUserActivity" />
         <activity android:name=".RegisterFingerprintActivity" />
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>
