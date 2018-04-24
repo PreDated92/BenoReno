@@ -14,7 +14,7 @@ public class LoginActivity extends Activity {
     // Key problems and points:
     // 1. The back button brings the MainActivity back to this activity!!
     // 2. This activity doesn't really need Username and Password fields, this is because the login method is done by hardware.
-    //    However~ we could have a conventional login as a backup process? But is the data is stored on the bike safe? (Unless we keep it hashed?)
+    //    However~ we could have a conventional login as a backup process? TBD
     // 3. There is a unique ID code given to each Beno bike so we're gonna add that in here.
 
     Context mContext = this;
@@ -38,7 +38,7 @@ public class LoginActivity extends Activity {
                 boolean isCredentialsCorrect = nameText.getText().toString().equals("Ken") && passText.getText().toString().equals("123");
                 if(isCredentialsCorrect) {
                     Toast.makeText(mContext, "Login Successful!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(mContext, MainActivity.class);
+                    Intent intent = new Intent(mContext, HomeActivity.class);
                     startActivity(intent);
                 }
                 else {
@@ -58,7 +58,7 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "Fingerprint Match! Welcome Xxx!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(mContext, MainActivity.class);
+                Intent intent = new Intent(mContext, HomeActivity.class);
                 startActivity(intent);
             }
         });
