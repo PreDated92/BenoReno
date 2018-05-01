@@ -2,11 +2,14 @@ package com.example.chesterchin.benoreno;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -31,9 +34,9 @@ import java.util.Locale;
 
 public class FragmentNavigation extends Fragment {
 
-    View mRootView;
-    MapView mMapView;
-    TextInputEditText mMapSearchBox;
+    private View mRootView;
+    private MapView mMapView;
+    private TextInputEditText mMapSearchBox;
     private GoogleMap googleMap;
 
     @Override
@@ -56,8 +59,22 @@ public class FragmentNavigation extends Fragment {
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
 
-                // For showing a move to my location button
-                //googleMap.setMyLocationEnabled(true);
+                if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) ==
+                        PackageManager.PERMISSION_GRANTED &&
+                        ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) ==
+                                PackageManager.PERMISSION_GRANTED) {
+
+                    AddMyLocationButton();
+
+                } else {
+                    Toast.makeText(getActivity(), "No location permission", Toast.LENGTH_LONG).show();
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{
+                                    android.Manifest.permission.ACCESS_FINE_LOCATION,
+                                    android.Manifest.permission.ACCESS_COARSE_LOCATION},
+                            0); //request code between 0 to 65535 (0xffff0000)
+                }
+
+
 
                 // For dropping a marker at a point on the Map
                 LatLng penang = new LatLng(5.4163, 100.3328);
@@ -141,9 +158,15 @@ public class FragmentNavigation extends Fragment {
             super.onPostExecute(latLng);
 
             Toast.makeText(getActivity(), Location.toString(), Toast.LENGTH_SHORT).show();
+            RemoveAnnotations();
             AddMarker(Location);
             MoveMap(Location);
         }
+    }
+
+    private void RemoveAnnotations()
+    {
+        googleMap.clear();
     }
 
     private void AddMarker(LatLng location)
@@ -157,6 +180,44 @@ public class FragmentNavigation extends Fragment {
         // For zooming automatically to the location of the marker
         CameraPosition cameraPosition = new CameraPosition.Builder().target(location).zoom(12).build();
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
+    private void AddMyLocationButton()
+    {
+        if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) ==
+                PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) ==
+                        PackageManager.PERMISSION_GRANTED)
+        {
+            // For showing a move to my location button
+            googleMap.setMyLocationEnabled(true);
+            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 0: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    AddMyLocationButton();
+                    Toast.makeText(getActivity(), "Permission granted", Toast.LENGTH_SHORT).show();
+
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(getActivity(), "Permission denied", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     @Override

@@ -35,18 +35,7 @@ public class FragmentStatistics extends Fragment {
 
         mGraph = rootView.findViewById(R.id.graph);
 
-        // generate Dates
-//        Calendar calendar = Calendar.getInstance();
-//        Date d1 = calendar.getTime();
-//        calendar.add(Calendar.DATE, 1);
-//        Date d2 = calendar.getTime();
-//        calendar.add(Calendar.DATE, 1);
-//        Date d3 = calendar.getTime();
-//        calendar.add(Calendar.DATE, 1);
-//        Date d4 = calendar.getTime();
-//        calendar.add(Calendar.DATE, 1);
-//        Date d5 = calendar.getTime();
-
+        // generate Timescale
         Calendar cal = new GregorianCalendar(2018, 6, 12, 9, 30, 0);
         long t1 = cal.getTimeInMillis();
         cal.add(Calendar.MINUTE, 1);
