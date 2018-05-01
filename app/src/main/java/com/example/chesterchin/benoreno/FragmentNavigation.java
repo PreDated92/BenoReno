@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class NavigationFragment extends Fragment {
+public class FragmentNavigation extends Fragment {
 
     MapView mMapView;
     private GoogleMap googleMap;

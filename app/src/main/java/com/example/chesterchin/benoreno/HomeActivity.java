@@ -11,9 +11,10 @@ import android.view.MenuItem;
 
 public class HomeActivity extends Activity {
 
-    private HomeFragment _homeFragment = new HomeFragment();
-    private LockFragment _lockFragment = new LockFragment();
-    private NavigationFragment _navigationFragment = new NavigationFragment();
+    private FragmentHome _fragmentHome = new FragmentHome();
+    private FragmentLock _fragmentLock = new FragmentLock();
+    private FragmentNavigation _fragmentNavigation = new FragmentNavigation();
+    private FragmentStatistics _fragmentStatistics = new FragmentStatistics();
 
     private BottomNavigationView.OnNavigationItemSelectedListener _onNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -22,15 +23,16 @@ public class HomeActivity extends Activity {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    selectedFragment = _homeFragment;
+                    selectedFragment = _fragmentHome;
                     break;
                 case R.id.navigation_lock:
-                    selectedFragment = _lockFragment;
+                    selectedFragment = _fragmentLock;
                     break;
                 case R.id.navigation_navigation:
-                    selectedFragment = _navigationFragment;
+                    selectedFragment = _fragmentNavigation;
                     break;
                 case R.id.navigation_statistics:
+                    selectedFragment = _fragmentStatistics;
                     break;
                 case R.id.navigation_settings:
                     break;
@@ -50,7 +52,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_home);
-        commitFragmentTransaction(R.id.frame_layout, _homeFragment);
+        commitFragmentTransaction(R.id.frame_layout, _fragmentHome);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(_onNavigationItemSelectedListener);
