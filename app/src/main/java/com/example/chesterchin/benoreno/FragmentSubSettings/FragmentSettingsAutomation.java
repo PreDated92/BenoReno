@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.chesterchin.benoreno.R;
 
-public class FragmentSettingsBikeInfo extends Fragment {
+public class FragmentSettingsAutomation extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,8 +16,9 @@ public class FragmentSettingsBikeInfo extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View fragView = inflater.inflate(R.layout.fragment_settings_bike_info, container, false);
+        View fragView = inflater.inflate(R.layout.fragment_settings_automation, container, false);
 
         return fragView;
     }
 }
+

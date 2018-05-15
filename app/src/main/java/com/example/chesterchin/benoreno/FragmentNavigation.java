@@ -34,16 +34,15 @@ import java.util.Locale;
 
 public class FragmentNavigation extends Fragment {
 
-    private View mRootView;
     private MapView mMapView;
     private TextInputEditText mMapSearchBox;
     private GoogleMap googleMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_navigation, container, false);
+        View fragView = inflater.inflate(R.layout.fragment_navigation, container, false);
 
-        mMapView = mRootView.findViewById(R.id.mapView);
+        mMapView = fragView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
 
         mMapView.onResume(); // needed to get the map to display immediately
@@ -86,10 +85,10 @@ public class FragmentNavigation extends Fragment {
             }
         });
 
-        mMapSearchBox = mRootView.findViewById(R.id.searchMap);
+        mMapSearchBox = fragView.findViewById(R.id.searchMap);
         mMapSearchBox.setOnEditorActionListener(MapSearchAction());
 
-        return mRootView;
+        return fragView;
     }
 
     private TextView.OnEditorActionListener MapSearchAction() {
