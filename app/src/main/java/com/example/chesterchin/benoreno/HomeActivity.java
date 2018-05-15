@@ -15,6 +15,7 @@ public class HomeActivity extends Activity {
     private FragmentLock _fragmentLock = new FragmentLock();
     private FragmentNavigation _fragmentNavigation = new FragmentNavigation();
     private FragmentStatistics _fragmentStatistics = new FragmentStatistics();
+    private FragmentSettings _fragmentSettings = new FragmentSettings();
 
     private BottomNavigationView.OnNavigationItemSelectedListener _onNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,6 +36,7 @@ public class HomeActivity extends Activity {
                     selectedFragment = _fragmentStatistics;
                     break;
                 case R.id.navigation_settings:
+                    selectedFragment = _fragmentSettings;
                     break;
             }
 
@@ -58,7 +60,7 @@ public class HomeActivity extends Activity {
         navigation.setOnNavigationItemSelectedListener(_onNavigationItemSelectedListener);
     }
 
-    private void commitFragmentTransaction(@IdRes int id, Fragment fragment) {
+    public void commitFragmentTransaction(@IdRes int id, Fragment fragment) {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(id, fragment);
         transaction.commit();
