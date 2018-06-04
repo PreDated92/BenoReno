@@ -52,9 +52,15 @@ public class FragmentHome extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     _tvPasTitle.setText("Throttle");
+                    _btPasDown.setVisibility(View.INVISIBLE);
+                    _btPasUp.setVisibility(View.INVISIBLE);
+                    _tvPasLevel.setVisibility(View.INVISIBLE);
                 } else {
                     _tvPasTitle.setText("Pedal Assist");
                     _tvPasLevel.setText((String.valueOf(_pasLevel)));
+                    _btPasDown.setVisibility(View.VISIBLE);
+                    _btPasUp.setVisibility(View.VISIBLE);
+                    _tvPasLevel.setVisibility(View.VISIBLE);
                 }
             }
         });

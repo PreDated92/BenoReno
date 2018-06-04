@@ -37,6 +37,8 @@ public class FragmentSettingsUserAccounts extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CreateDataStructure();
     }
 
     @Override
@@ -44,7 +46,7 @@ public class FragmentSettingsUserAccounts extends Fragment {
         View fragView = inflater.inflate(R.layout.fragment_settings_user_accounts, container, false);
 
         mListView1 = fragView.findViewById(R.id.listview);
-        CreateListView();
+        mListView1.setAdapter(mDataMemberAdapter);
 
         _btAddUser = fragView.findViewById(R.id.btAddUser);
         _btEditUser = fragView.findViewById(R.id.btEditUser);
@@ -54,9 +56,8 @@ public class FragmentSettingsUserAccounts extends Fragment {
         return fragView;
     }
 
-    private void CreateListView() {
+    private void CreateDataStructure() {
         mDataMemberAdapter = new MySimpleArrayAdapter(getActivity(), mDataMemberList);
-        mListView1.setAdapter(mDataMemberAdapter);
 
         AddUser("User", true);
         AddUser("Test 1", true);
@@ -77,14 +78,14 @@ public class FragmentSettingsUserAccounts extends Fragment {
         _btAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentSettingsUserAdd);
+                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentSettingsUserAdd, true,false);
             }
         });
 
         _btEditUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentSettingsUserEdit);
+                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentSettingsUserEdit, true,false);
             }
         });
 
