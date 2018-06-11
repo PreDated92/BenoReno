@@ -13,17 +13,17 @@
 
     <item
         android:id="@+id/navigation_navigation"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/ic_map"
         android:title="navi" />
 
     <item
         android:id="@+id/navigation_statistics"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/ic_graph"
         android:title="stat" />
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/ic_settings"
         android:title="setting" />
 
 </menu>

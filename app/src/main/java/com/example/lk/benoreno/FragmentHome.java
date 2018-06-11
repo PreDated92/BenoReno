@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.lk.benoreno.ControlView.DisplayTilePasView;
 import com.example.lk.benoreno.ControlView.DisplayTileView;
+import com.example.lk.benoreno.ControlView.SpeedometerView;
 
 public class FragmentHome extends Fragment {
 
@@ -21,6 +22,7 @@ public class FragmentHome extends Fragment {
     private DisplayTileView _dispDistance;
     private DisplayTileView _dispTimer;
     private DisplayTileView _dispCalories;
+    private SpeedometerView _speedometer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class FragmentHome extends Fragment {
         _dispDistance = fragView.findViewById(R.id.dispDistance);
         _dispTimer = fragView.findViewById(R.id.dispTimer);
         _dispCalories = fragView.findViewById(R.id.dispCalories);
+        _speedometer = fragView.findViewById(R.id.speedometerView);
 
         Init();
 
@@ -68,6 +71,9 @@ public class FragmentHome extends Fragment {
         _dispCalories.setDispTitle("Calories");
         _dispCalories.setDispValue("7.895");
         _dispCalories.setDispUnit("kcal");
+
+        _speedometer.setDispValue("25");
+        _speedometer.setDispUnit("km/h");
     }
 
 
