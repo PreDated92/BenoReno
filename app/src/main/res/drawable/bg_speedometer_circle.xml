@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="true"
+    android:innerRadius="@dimen/activity_vertical_margin">
+    <solid android:color="#ffffff"/> <!--199fff-->
+    <stroke
+        android:width="2dp"
+        android:color="#444444"/>
+
+    <!--android:centerColor="#ffff00"
+        android:endColor="#00ff00"
+        android:startColor="#fb0000"-->
+</shape>

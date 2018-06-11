@@ -29,14 +29,14 @@
         android:text="Let's say fingerprint registration is successful."/>
 
     <Button
+        android:id="@+id/btnRegisterAnotherFingerprint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRegisterAnotherFingerprint"
         android:text="Register Another Fingerprint"/>
 
     <Button
+        android:id="@+id/btnRegisterFingerprintNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRegisterFingerprintNext"
         android:text="Next"/>
 </LinearLayout>

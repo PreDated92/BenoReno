@@ -10,15 +10,17 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.example.lk.benoreno.ControlView.DisplayTilePasView;
+import com.example.lk.benoreno.ControlView.DisplayTileView;
+
 public class FragmentHome extends Fragment {
 
-    private Switch _switch1;
-    private TextView _tvPasTitle;
-    private TextView _tvPasLevel;
-    private ImageButton _btPasUp;
-    private ImageButton _btPasDown;
-    private int _pasLevel;
-    final int PAS_MAX_VALUE = 6;
+    private DisplayTilePasView _dispPas;
+    private DisplayTileView _dispTemperature;
+    private DisplayTileView _dispBattery;
+    private DisplayTileView _dispDistance;
+    private DisplayTileView _dispTimer;
+    private DisplayTileView _dispCalories;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,13 @@ public class FragmentHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fragView = inflater.inflate(R.layout.fragment_home, container, false);
-        _switch1 = fragView.findViewById(R.id.switch1);
-        _tvPasTitle = fragView.findViewById(R.id.tvPasTitle);
-        _tvPasLevel = fragView.findViewById(R.id.tvPasLevel);
-        _btPasUp = fragView.findViewById(R.id.btPasUp);
-        _btPasDown = fragView.findViewById(R.id.btPasDown);
 
-        HookEventHandlers();
+        _dispPas = fragView.findViewById(R.id.dispPas);
+        _dispTemperature = fragView.findViewById(R.id.dispTemperature);
+        _dispBattery = fragView.findViewById(R.id.dispBattery);
+        _dispDistance = fragView.findViewById(R.id.dispDistance);
+        _dispTimer = fragView.findViewById(R.id.dispTimer);
+        _dispCalories = fragView.findViewById(R.id.dispCalories);
 
         Init();
 
@@ -43,52 +45,30 @@ public class FragmentHome extends Fragment {
     }
 
     private void Init(){
-        _pasLevel = 0;
+        _dispPas.setDispTitle("Pedal Assist/Throttle");
+        _dispPas.setDispValue("0");
+        _dispPas.setDispUnit("");
+
+        _dispTemperature.setDispTitle("Temperature");
+        _dispTemperature.setDispValue("27");
+        _dispTemperature.setDispUnit("°C");
+
+        _dispBattery.setDispTitle("Battery");
+        _dispBattery.setDispValue("85");
+        _dispBattery.setDispUnit("%");
+
+        _dispDistance.setDispTitle("Distance");
+        _dispDistance.setDispValue("12.5");
+        _dispDistance.setDispUnit("km");
+
+        _dispTimer.setDispTitle("Timer");
+        _dispTimer.setDispValue("00:12:45");
+        _dispTimer.setDispUnit("");
+
+        _dispCalories.setDispTitle("Calories");
+        _dispCalories.setDispValue("7.895");
+        _dispCalories.setDispUnit("kcal");
     }
 
-    private void HookEventHandlers() {
 
-        _switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    _tvPasTitle.setText("Throttle");
-                    _btPasDown.setVisibility(View.INVISIBLE);
-                    _btPasUp.setVisibility(View.INVISIBLE);
-                    _tvPasLevel.setVisibility(View.INVISIBLE);
-                } else {
-                    _tvPasTitle.setText("Pedal Assist");
-                    _tvPasLevel.setText((String.valueOf(_pasLevel)));
-                    _btPasDown.setVisibility(View.VISIBLE);
-                    _btPasUp.setVisibility(View.VISIBLE);
-                    _tvPasLevel.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        _btPasUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (_pasLevel < PAS_MAX_VALUE) {
-                    _pasLevel++;
-                }
-
-                _tvPasLevel.setText((String.valueOf(_pasLevel)));
-                _btPasUp.setEnabled(_pasLevel != PAS_MAX_VALUE);
-                _btPasDown.setEnabled(_pasLevel != 0);
-            }
-        });
-
-        _btPasDown.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (_pasLevel > 0) {
-                    _pasLevel--;
-                }
-
-                _tvPasLevel.setText((String.valueOf(_pasLevel)));
-                _btPasUp.setEnabled(_pasLevel != PAS_MAX_VALUE);
-                _btPasDown.setEnabled(_pasLevel != 0);
-            }
-        });
-    }
 }

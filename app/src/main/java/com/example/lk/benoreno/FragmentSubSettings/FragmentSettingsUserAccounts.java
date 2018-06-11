@@ -22,6 +22,8 @@ import java.util.List;
 
 public class FragmentSettingsUserAccounts extends Fragment {
 
+    public static final String ADD_USER_STACK_STRING = "ADD_USER_STACK_STRING";
+
     private FragmentSettingsUserAdd _fragmentSettingsUserAdd = new FragmentSettingsUserAdd();
     private FragmentSettingsUserEdit _fragmentSettingsUserEdit = new FragmentSettingsUserEdit();
 
@@ -78,6 +80,7 @@ public class FragmentSettingsUserAccounts extends Fragment {
         _btAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ((HomeActivity) getActivity()).FragmentStackName = "ADD_USER_STACK_STRING";
                 ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentSettingsUserAdd, true,false);
             }
         });

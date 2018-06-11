@@ -7,10 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.lk.benoreno.FragmentRegisterFingerprint;
 import com.example.lk.benoreno.HomeActivity;
 import com.example.lk.benoreno.R;
 
 public class FragmentSettingsUserAdd extends Fragment {
+
+    private FragmentRegisterFingerprint _fragmentRegisterFingerprint = new FragmentRegisterFingerprint();
     private Button _btBack;
     private Button _btNext;
 
@@ -42,7 +45,7 @@ public class FragmentSettingsUserAdd extends Fragment {
         _btNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentRegisterFingerprint, true, false);
             }
         });
     }

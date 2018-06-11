@@ -18,47 +18,34 @@
         app:layout_constraintEnd_toStartOf="@+id/llHomeCenter"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tvPasTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pedal Assist/Throttle" />
+        <com.example.lk.benoreno.ControlView.DisplayTilePasView
+            android:id="@+id/dispPas"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTilePasView>
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <com.example.lk.benoreno.ControlView.DisplayTileView
+            android:id="@+id/dispTemperature"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTileView>
 
-        <ImageButton
-            android:id="@+id/btPasUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/arrow_up_float" />
-
-        <TextView
-            android:id="@+id/tvPasLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PAS Level" />
-
-        <ImageButton
-            android:id="@+id/btPasDown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/arrow_down_float" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Temperature/Weather" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Battery" />
+        <com.example.lk.benoreno.ControlView.DisplayTileView
+            android:id="@+id/dispBattery"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTileView>
     </LinearLayout>
 
-    <LinearLayout
+    <com.example.lk.benoreno.ControlView.SpeedometerView
         android:id="@+id/llHomeCenter"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -67,32 +54,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/llHomeRight"
         app:layout_constraintStart_toEndOf="@+id/llHomeLeft">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lights (Icon)" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Speed" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Left Indicator" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Right Indicator" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Start" />
-    </LinearLayout>
+    </com.example.lk.benoreno.ControlView.SpeedometerView>
 
     <LinearLayout
         android:id="@+id/llHomeRight"
@@ -104,20 +66,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/llHomeCenter">
 
-        <TextView
+        <com.example.lk.benoreno.ControlView.DisplayTileView
+            android:id="@+id/dispDistance"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Timer" />
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTileView>
 
-        <TextView
+        <com.example.lk.benoreno.ControlView.DisplayTileView
+            android:id="@+id/dispTimer"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Distance" />
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTileView>
 
-        <TextView
+        <com.example.lk.benoreno.ControlView.DisplayTileView
+            android:id="@+id/dispCalories"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Calories burnt" />
+            android:layout_height="wrap_content">
+        </com.example.lk.benoreno.ControlView.DisplayTileView>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -62,6 +62,7 @@ public class HomeActivity extends Activity {
         });
     }
 
+    public String FragmentStackName = null;
     public void commitFragmentTransaction(@IdRes int id, Fragment fragment, Boolean stack, Boolean clear) {
 
         if (clear){
@@ -73,7 +74,8 @@ public class HomeActivity extends Activity {
         transaction.replace(id, fragment);
         if (stack){
             // Add to stack
-            transaction.addToBackStack(null);
+            transaction.addToBackStack(FragmentStackName);
+            FragmentStackName = null;
         }
         transaction.commit();
     }
