@@ -9,69 +9,85 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <TextView
+        style="@style/bigText"
         android:id="@+id/tvAntiTheftTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Anti Theft"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tvGeoAlarm"/>
-
-    <TextView
-        android:id="@+id/tvGeoAlarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Geofencing Alarm"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAntiTheftTitle"
-        app:layout_constraintBottom_toTopOf="@+id/tvGeoRadius"/>
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/tvGeoAlarm"
+        app:layout_constraintBottom_toTopOf="@+id/llTop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAntiTheftTitle"
-        app:layout_constraintBottom_toTopOf="@+id/tvGeoRadius"/>
-
-    <TextView
-        android:id="@+id/tvGeoRadius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Geofencing Radius"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGeoAlarm"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <Spinner
-        android:id="@+id/spGeoRadius"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintStart_toEndOf="@+id/tvGeoRadius"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/llMiddle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGeoAlarm"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spGeoRadius"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvAntiTheftTitle">
 
+        <TextView
+            android:id="@+id/tvGeoAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Geofencing Alarm"/>
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMiddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/llBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/llTop"
+        >
+
+        <TextView
+            android:id="@+id/tvGeoRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Geofencing Radius"/>
+
+        <Spinner
+            android:id="@+id/spGeoRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
 
         <Spinner
             android:id="@+id/spGeoRadiusUnits"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llMiddle">
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,8 +95,8 @@
             android:text="Vibration Alarm " />
 
         <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

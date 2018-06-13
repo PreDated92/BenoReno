@@ -25,12 +25,14 @@
             android:text="Alert" />
 
         <ImageButton
-            android:id="@+id/lock_alert_button"
+            android:id="@+id/btAlert"
+            android:background="@drawable/bg_toggle_button_selector"
+            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="Alert"
-            android:src="@android:drawable/ic_dialog_alert" />
+            android:src="@android:drawable/ic_dialog_alert"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,7 +59,9 @@
             android:text="Lock" />
 
         <ImageButton
-            android:id="@+id/lock_lock_button"
+            android:id="@+id/btLock"
+            android:background="@drawable/bg_toggle_button_selector"
+            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -92,13 +96,17 @@
             android:text="Power Saving Mode" />
 
         <ImageButton
-            android:id="@+id/lock_power_button"
+            android:id="@+id/btPowerSaving"
+            android:background="@drawable/bg_toggle_button_selector"
+            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="Power Saving Mode"
             android:src="@drawable/ic_plug"
-            android:tint="#ffffff"/>
+            android:tint="#ffffff"
+
+            />
 
         <TextView
             android:layout_width="wrap_content"
