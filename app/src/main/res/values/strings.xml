@@ -6,4 +6,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="alarm_button_description">Alarm will trigger when bike is moved more than x meters from this location</string>
+    <string name="lock_button_description">Bike cannot be locked while it is moving\n</string>
+    <string name="power_saving_description">Turns off several features when idle\n</string>
 </resources>

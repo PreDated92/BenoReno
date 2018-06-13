@@ -60,6 +60,7 @@ public class FragmentSettingsUserAccounts extends Fragment {
 
     private void CreateDataStructure() {
         mDataMemberAdapter = new MySimpleArrayAdapter(getActivity(), mDataMemberList);
+        ClearUsers();
 
         AddUser("User", true);
         AddUser("Test 1", true);
@@ -72,6 +73,12 @@ public class FragmentSettingsUserAccounts extends Fragment {
         dm.Status = status;
         dm.IsChecked = false;
         mDataMemberList.add(dm);
+        mDataMemberAdapter.notifyDataSetChanged();
+    }
+
+    private void ClearUsers()
+    {
+        mDataMemberList.clear();
         mDataMemberAdapter.notifyDataSetChanged();
     }
 

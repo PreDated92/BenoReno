@@ -13,35 +13,35 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/speedometerView"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.example.lk.benoreno.ControlView.DisplayTilePasView
             android:id="@+id/dispPas"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin">
         </com.example.lk.benoreno.ControlView.DisplayTilePasView>
 
         <com.example.lk.benoreno.ControlView.DisplayTileView
             android:id="@+id/dispTemperature"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_weight="1">
         </com.example.lk.benoreno.ControlView.DisplayTileView>
 
         <com.example.lk.benoreno.ControlView.DisplayTileView
             android:id="@+id/dispBattery"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_margin="@dimen/item_margin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/item_margin"
+            android:layout_weight="1">
         </com.example.lk.benoreno.ControlView.DisplayTileView>
     </LinearLayout>
 
@@ -50,10 +50,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/llHomeRight"
-        app:layout_constraintStart_toEndOf="@+id/llHomeLeft">
+        app:layout_constraintStart_toEndOf="@+id/llHomeLeft"
+        app:layout_constraintTop_toTopOf="parent">
     </com.example.lk.benoreno.ControlView.SpeedometerView>
 
     <LinearLayout
@@ -61,36 +61,36 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/speedometerView">
+        app:layout_constraintStart_toEndOf="@+id/speedometerView"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.example.lk.benoreno.ControlView.DisplayTileView
             android:id="@+id/dispDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1">
         </com.example.lk.benoreno.ControlView.DisplayTileView>
 
         <com.example.lk.benoreno.ControlView.DisplayTileView
             android:id="@+id/dispTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1">
         </com.example.lk.benoreno.ControlView.DisplayTileView>
 
         <com.example.lk.benoreno.ControlView.DisplayTileView
             android:id="@+id/dispCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/item_margin"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_weight="1">
         </com.example.lk.benoreno.ControlView.DisplayTileView>
 
     </LinearLayout>

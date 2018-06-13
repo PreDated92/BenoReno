@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alert Description" />
+            android:text="@string/alarm_button_description" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,12 +62,13 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="Lock"
-            android:src="@android:drawable/ic_dialog_alert" />
+            android:src="@drawable/ic_lock_black"
+            android:tint="#ffffff"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lock Description" />
+            android:text="@string/lock_button_description" />
 
     </LinearLayout>
 
@@ -96,11 +97,12 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:contentDescription="Power Saving Mode"
-            android:src="@android:drawable/ic_dialog_alert" />
+            android:src="@drawable/ic_plug"
+            android:tint="#ffffff"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Power Saving Mode Description" />
+            android:text="@string/power_saving_description" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
