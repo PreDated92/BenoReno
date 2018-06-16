@@ -9,68 +9,53 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tvTitle"
+        style="@style/bigText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Lights"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lights"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:orientation="vertical" >
 
-    <Spinner
-        android:id="@+id/spLights"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logo Lights"/>
+            <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+                android:id="@+id/spLights"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
-    <Spinner
-        android:id="@+id/spLogoLights"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+            <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+                android:id="@+id/spLogoLights"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Auto Lights Method"/>
+            <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+                android:id="@+id/spAutoLightsMethod"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
-    <Spinner
-        android:id="@+id/spAutoLightsMethod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+            <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+                android:id="@+id/spAutoLightsTimeOn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time to turn on lights"/>
-
-    <Spinner
-        android:id="@+id/spAutoLightsTimeOn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time to turn off lights"/>
-
-    <Spinner
-        android:id="@+id/spAutoLightsTimeOff"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-
+            <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+                android:id="@+id/spAutoLightsTimeOff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

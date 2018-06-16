@@ -33,9 +33,6 @@ public class DisplayTilePasView extends DisplayTileView {
         super(context, attrs, defStyle);
     }
 
-    /**
-     * Load component XML layout
-     */
     @Override
     protected void initControl(Context context)
     {
@@ -44,7 +41,6 @@ public class DisplayTilePasView extends DisplayTileView {
 
         inflater.inflate(R.layout.control_pas_tile, this);
 
-        // layout is inflated, assign local variables to components
         _tvValue = findViewById(R.id.tvValue);
         _tvUnit = findViewById(R.id.tvUnit);
         _tvTitle = findViewById(R.id.tvTitle);

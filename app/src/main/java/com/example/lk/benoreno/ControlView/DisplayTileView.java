@@ -34,9 +34,6 @@ public class DisplayTileView extends ConstraintLayout {
         initControl(context);
     }
 
-    /**
-     * Load component XML layout
-     */
     protected void initControl(Context context)
     {
         LayoutInflater inflater = (LayoutInflater)
@@ -45,9 +42,9 @@ public class DisplayTileView extends ConstraintLayout {
         inflater.inflate(R.layout.control_display_tile, this);
 
         // layout is inflated, assign local variables to components
-        _tvValue = (TextView)findViewById(R.id.tvValue);
-        _tvUnit = (TextView)findViewById(R.id.tvUnit);
-        _tvTitle = (TextView)findViewById(R.id.tvTitle);
+        _tvValue = findViewById(R.id.tvValue);
+        _tvUnit = findViewById(R.id.tvUnit);
+        _tvTitle = findViewById(R.id.tvTitle);
     }
 
     public void setDispTitle(String dispTitle) {
