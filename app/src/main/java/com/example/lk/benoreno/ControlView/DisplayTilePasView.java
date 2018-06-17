@@ -96,9 +96,6 @@ public class DisplayTilePasView extends DisplayTileView {
             }
         });
     }
-
-
-
 }
 
 

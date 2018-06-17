@@ -36,7 +36,7 @@ public class TextSpinnerComboView extends LinearLayout {
         LayoutInflater inflater = (LayoutInflater)
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        inflater.inflate(R.layout.control_text_view_spinner_combo, this);
+        inflater.inflate(R.layout.control_text_spinner_combo, this);
 
         _spValues = findViewById(R.id.spValues);
         _tvTitle = findViewById(R.id.tvTitle);

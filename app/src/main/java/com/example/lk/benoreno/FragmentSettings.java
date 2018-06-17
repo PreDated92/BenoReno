@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
+import com.example.lk.benoreno.ControlView.SettingsButtonView;
 import com.example.lk.benoreno.FragmentSubSettings.*;
 
 public class FragmentSettings extends Fragment {
@@ -18,12 +18,12 @@ public class FragmentSettings extends Fragment {
     private FragmentSettingsRegional _fragmentSettingsRegional = new FragmentSettingsRegional();
     private FragmentSettingsLights _fragmentSettingsLights = new FragmentSettingsLights();
 
-    private Button _btSettingsBikeInfo;
-    private Button _btSettingsUserAcc;
-    private Button _btSettingsAntiTheft;
-    private Button _btSettingsAutomation;
-    private Button _btSettingsRegional;
-    private Button _btSettingsLights;
+    private SettingsButtonView _btSettingsBikeInfo;
+    private SettingsButtonView _btSettingsUserAcc;
+    private SettingsButtonView _btSettingsAntiTheft;
+    private SettingsButtonView _btSettingsAutomation;
+    private SettingsButtonView _btSettingsRegional;
+    private SettingsButtonView _btSettingsLights;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,24 @@ public class FragmentSettings extends Fragment {
         _btSettingsLights = fragView.findViewById(R.id.btSettingsLights);
 
         HookButtonEventHandler();
+
+        _btSettingsBikeInfo.setDispTitle("Bike Info");
+        _btSettingsBikeInfo.setDispImage(R.drawable.ic_bike);
+
+        _btSettingsUserAcc.setDispTitle("Users");
+        _btSettingsUserAcc.setDispImage(R.drawable.ic_user);
+
+        _btSettingsAntiTheft.setDispTitle("Anti Theft");
+        _btSettingsAntiTheft.setDispImage(R.drawable.ic_lock);
+
+        _btSettingsAutomation.setDispTitle("Automation");
+        _btSettingsAutomation.setDispImage(R.drawable.ic_android);
+
+        _btSettingsRegional.setDispTitle("Regional");
+        _btSettingsRegional.setDispImage(R.drawable.ic_world);
+
+        _btSettingsLights.setDispTitle("Lights");
+        _btSettingsLights.setDispImage(R.drawable.ic_light);
 
         return fragView;
     }
