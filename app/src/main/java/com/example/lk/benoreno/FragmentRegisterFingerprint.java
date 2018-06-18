@@ -28,12 +28,12 @@ public class FragmentRegisterFingerprint extends Fragment {
 
         _btRegisterAgain = fragView.findViewById(R.id.btnRegisterAnotherFingerprint);
         _btNext = fragView.findViewById(R.id.btnRegisterFingerprintNext);
-        HookButtonEventHandler();
+        HookEventHandler();
 
         return  fragView;
     }
 
-    private void HookButtonEventHandler() {
+    private void HookEventHandler() {
 
         _btRegisterAgain.setOnClickListener(new View.OnClickListener() {
             @Override

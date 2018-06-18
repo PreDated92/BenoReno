@@ -27,10 +27,8 @@ public class FragmentSettingsUserAccounts extends Fragment {
     private FragmentSettingsUserAdd _fragmentSettingsUserAdd = new FragmentSettingsUserAdd();
     private FragmentSettingsUserEdit _fragmentSettingsUserEdit = new FragmentSettingsUserEdit();
 
-    private List<DataMember> mDataMemberList = new ArrayList<>();
-    private MySimpleArrayAdapter mDataMemberAdapter;
-
-    private ListView mListView1;
+    private List<UserData> _userDataList = new ArrayList<>();
+    private UserTableArrayAdapter _adapter;
 
     private Button _btAddUser;
     private Button _btEditUser;
@@ -47,19 +45,19 @@ public class FragmentSettingsUserAccounts extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragView = inflater.inflate(R.layout.fragment_settings_user_accounts, container, false);
 
-        mListView1 = fragView.findViewById(R.id.lvUserTable);
-        mListView1.setAdapter(mDataMemberAdapter);
+        ListView listView = fragView.findViewById(R.id.lvUserTable);
+        listView.setAdapter(_adapter);
 
         _btAddUser = fragView.findViewById(R.id.btAddUser);
         _btEditUser = fragView.findViewById(R.id.btEditUser);
         _btRemoveUser = fragView.findViewById(R.id.btRemoveUser);
-        HookButtonEventHandler();
+        HookEventHandler();
 
         return fragView;
     }
 
     private void CreateDataStructure() {
-        mDataMemberAdapter = new MySimpleArrayAdapter(getActivity(), mDataMemberList);
+        _adapter = new UserTableArrayAdapter(getActivity(), _userDataList);
         ClearUsers();
 
         AddUser("User", true);
@@ -68,21 +66,21 @@ public class FragmentSettingsUserAccounts extends Fragment {
     }
 
     private void AddUser(String name, Boolean status) {
-        DataMember dm = new DataMember();
+        UserData dm = new UserData();
         dm.Name = name;
         dm.Status = status;
         dm.IsChecked = false;
-        mDataMemberList.add(dm);
-        mDataMemberAdapter.notifyDataSetChanged();
+        _userDataList.add(dm);
+        _adapter.notifyDataSetChanged();
     }
 
     private void ClearUsers()
     {
-        mDataMemberList.clear();
-        mDataMemberAdapter.notifyDataSetChanged();
+        _userDataList.clear();
+        _adapter.notifyDataSetChanged();
     }
 
-    private void HookButtonEventHandler() {
+    private void HookEventHandler() {
 
         _btAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,18 +120,18 @@ public class FragmentSettingsUserAccounts extends Fragment {
     }
 }
 
-class DataMember {
+class UserData {
     String Name; // Name
     Boolean Status; // Admin or Normal
     Boolean IsChecked; // Is it checked?
 }
 
-class MySimpleArrayAdapter extends ArrayAdapter<DataMember> {
+class UserTableArrayAdapter extends ArrayAdapter<UserData> {
     private final Context context;
-    private final List<DataMember> values;
+    private final List<UserData> values;
 
-    MySimpleArrayAdapter(Context context, List<DataMember> values) {
-        super(context, R.layout.rowlayout, values);
+    UserTableArrayAdapter(Context context, List<UserData> values) {
+        super(context, R.layout.listview_user_accounts, values);
         this.context = context;
         this.values = values;
     }
@@ -142,11 +140,11 @@ class MySimpleArrayAdapter extends ArrayAdapter<DataMember> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+        View rowView = inflater.inflate(R.layout.listview_user_accounts, parent, false);
         TextView textView1 = rowView.findViewById(R.id.label1);
         TextView textView2 = rowView.findViewById(R.id.label2);
 
-        DataMember dm = values.get(position);
+        UserData dm = values.get(position);
 
         textView1.setText(dm.Name);
 

@@ -9,11 +9,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvTitle"
-        style="@style/bigText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/titleText"
         android:text="Lights"/>
 
     <ScrollView

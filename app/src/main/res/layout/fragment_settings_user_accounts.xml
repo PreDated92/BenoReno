@@ -9,10 +9,7 @@
     android:orientation="vertical">
 
     <TextView
-        style="@style/bigText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/titleText"
         android:text="User Accounts" />
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

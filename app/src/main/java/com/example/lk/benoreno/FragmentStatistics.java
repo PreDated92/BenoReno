@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.LabelFormatter;
-import com.jjoe64.graphview.Viewport;
-import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -21,7 +19,10 @@ import java.util.GregorianCalendar;
 
 public class FragmentStatistics extends Fragment {
 
-    GraphView mGraph;
+    private FragmentHistory _fragmentHistory = new FragmentHistory();
+
+    private GraphView _graph;
+    private ImageButton _btHistory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,10 @@ public class FragmentStatistics extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_statistics, container, false);
 
-        mGraph = rootView.findViewById(R.id.graph);
+        _graph = rootView.findViewById(R.id.graph);
+        _btHistory = rootView.findViewById(R.id.btHistory);
+
+        HookEventHandler();
 
         // generate Timescale
         Calendar cal = new GregorianCalendar(2018, 6, 12, 9, 30, 0);
@@ -54,10 +58,10 @@ public class FragmentStatistics extends Fragment {
                 new DataPoint(t4, 20),
                 new DataPoint(t5, 60)
         });
-        mGraph.addSeries(series);
+        _graph.addSeries(series);
 
         // set custom label formatter
-        mGraph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
+        _graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter() {
             @Override
             public String formatLabel(double value, boolean isValueX) {
 
@@ -72,20 +76,29 @@ public class FragmentStatistics extends Fragment {
         });
 
         // set manual x bounds to have nice steps
-//        mGraph.getViewport().setMinX(t1);
-//        mGraph.getViewport().setMaxX(t5);
-//        mGraph.getViewport().setXAxisBoundsManual(true);
+//        _graph.getViewport().setMinX(t1);
+//        _graph.getViewport().setMaxX(t5);
+//        _graph.getViewport().setXAxisBoundsManual(true);
 
         // set manual y bounds to have nice steps
-        mGraph.getViewport().setMinY(0.0);
-        mGraph.getViewport().setMaxY(80.0);
-        mGraph.getViewport().setYAxisBoundsManual(true);
+        _graph.getViewport().setMinY(0.0);
+        _graph.getViewport().setMaxY(80.0);
+        _graph.getViewport().setYAxisBoundsManual(true);
 
         // as we use dates as labels, the human rounding to nice readable numbers
         // is not necessary
-        mGraph.getGridLabelRenderer().setHumanRounding(false);
-
+        _graph.getGridLabelRenderer().setHumanRounding(false);
 
         return rootView;
+    }
+
+    private void HookEventHandler()
+    {
+        _btHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((HomeActivity) getActivity()).commitFragmentTransaction(R.id.frame_layout, _fragmentHistory, true, false);
+            }
+        });
     }
 }
