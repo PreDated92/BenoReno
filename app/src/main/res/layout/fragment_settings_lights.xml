@@ -30,31 +30,30 @@
             <com.example.lk.benoreno.ControlView.TextSpinnerComboView
                 android:id="@+id/spLights"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
+                android:layout_height="wrap_content"/>
 
             <com.example.lk.benoreno.ControlView.TextSpinnerComboView
                 android:id="@+id/spLogoLights"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
             </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
             <com.example.lk.benoreno.ControlView.TextSpinnerComboView
                 android:id="@+id/spAutoLightsMethod"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
             </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
             <com.example.lk.benoreno.ControlView.TextSpinnerComboView
                 android:id="@+id/spAutoLightsTimeOn"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
             </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
 
             <com.example.lk.benoreno.ControlView.TextSpinnerComboView
                 android:id="@+id/spAutoLightsTimeOff"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
             </com.example.lk.benoreno.ControlView.TextSpinnerComboView>
         </LinearLayout>
     </ScrollView>

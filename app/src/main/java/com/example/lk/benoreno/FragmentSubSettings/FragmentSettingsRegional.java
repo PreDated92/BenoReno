@@ -5,16 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
+import com.example.lk.benoreno.ControlView.TextSpinnerComboView;
 import com.example.lk.benoreno.R;
 
 public class FragmentSettingsRegional extends Fragment {
 
-    private Spinner _spLanguage;
-    private Spinner _spDistanceUnits;
-    private Spinner _spWeightUnits;
+    private TextSpinnerComboView _spLanguage;
+    private TextSpinnerComboView _spDistanceUnits;
+    private TextSpinnerComboView _spWeightUnits;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,15 +35,15 @@ public class FragmentSettingsRegional extends Fragment {
     private void CreateSpinnerAdapter()
     {
         String[] items = new String[]{"English", "Language 2", "Language 3"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
-        _spLanguage.setAdapter(adapter);
+        _spLanguage.setDropdownItems(items);
+        _spLanguage.setDispTitle("Language");
 
         items = new String[]{"km", "mi"};
-        adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
-        _spDistanceUnits.setAdapter(adapter);
+        _spDistanceUnits.setDropdownItems(items);
+        _spDistanceUnits.setDispTitle("Distance Units");
 
         items = new String[]{"kg", "lbs"};
-        adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
-        _spWeightUnits.setAdapter(adapter);
+        _spWeightUnits.setDropdownItems(items);
+        _spWeightUnits.setDispTitle("Weight Units");
     }
 }

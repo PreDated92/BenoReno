@@ -9,43 +9,31 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/bigText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Regional"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Language"/>
-
-    <Spinner
-        android:id="@+id/spLanguage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Distance Units"/>
+        <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+            android:id="@+id/spLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <Spinner
-        android:id="@+id/spDistanceUnits"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+            android:id="@+id/spWeightUnits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight Units"/>
+        <com.example.lk.benoreno.ControlView.TextSpinnerComboView
+            android:id="@+id/spDistanceUnits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
-    <Spinner
-        android:id="@+id/spWeightUnits"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
 </LinearLayout>

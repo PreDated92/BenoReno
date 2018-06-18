@@ -47,7 +47,7 @@ public class FragmentSettingsUserAccounts extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View fragView = inflater.inflate(R.layout.fragment_settings_user_accounts, container, false);
 
-        mListView1 = fragView.findViewById(R.id.listview);
+        mListView1 = fragView.findViewById(R.id.lvUserTable);
         mListView1.setAdapter(mDataMemberAdapter);
 
         _btAddUser = fragView.findViewById(R.id.btAddUser);
@@ -110,7 +110,7 @@ public class FragmentSettingsUserAccounts extends Fragment {
     private void Alert() {
         new AlertDialog.Builder(getActivity())
                 .setTitle("Confirm Delete")
-                .setMessage("Do you really want to delete User X?")
+                .setMessage("Do you really want to delete User X? This action cannot be undone!")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
