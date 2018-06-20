@@ -19,11 +19,12 @@
             android:id="@+id/btPasDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/arrow_down_float" />
+            android:src="@drawable/ic_minus" />
 
         <TextView
             android:id="@+id/tvValue"
             style="@style/bigText"
+            android:layout_gravity="center"
             android:text="Value" />
 
         <TextView
@@ -36,7 +37,7 @@
             android:id="@+id/btPasUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/arrow_up_float" />
+            android:src="@drawable/ic_plus"/>
 
     </LinearLayout>
 
